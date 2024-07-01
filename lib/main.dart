@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cluth_vscode_ver1/widget/tab_screen.dart'; // TabScreen 경로 확인
+import 'package:cluth_vscode_ver1/widget/tab_screen.dart';
+import 'package:table_calendar/table_calendar.dart'; // TabScreen 경로 확인
 
 void main() {
   runApp(const MyApp());
@@ -37,29 +38,37 @@ class CombinedApp extends StatelessWidget {
       home: DefaultTabController(
         length: 5, // 탭의 수
         child: Scaffold(
-            appBar: AppBar(
-              title: const Text('Clutch'),
-              bottom: const TabBar(
-                tabs: [
-                  Tab(text: '슛맵'),
-                  Tab(text: '포메이션 맵'),
-                  Tab(text: '패스 맵'),
-                  Tab(text: '최근'),
-                  Tab(text: '과거')
-                ],
-              ),
+          appBar: AppBar(
+            title: const Text('Clutch DEMO'),
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: '슛맵'),
+                Tab(text: '포메이션 맵'),
+                Tab(text: '패스 맵'),
+                Tab(text: '최근'),
+                Tab(text: '과거')
+              ],
             ),
-            body: const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Spacer(),
-                  Text('Multiple choice'),
-                  MultipleChoice(),
-                  Spacer()
-                ],
-              ),
-            )),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Spacer(),
+                Divider(),
+                Text('Multiple choice'),
+                MultipleChoice(),
+                Divider(),
+                Spacer(),
+                Container(
+                    child: TableCalendar(
+                        focusedDay: DateTime.now(),
+                        firstDay: DateTime.utc(2010, 3, 14),
+                        lastDay: DateTime.utc(2030, 10, 16))),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
