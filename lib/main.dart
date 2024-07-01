@@ -1,5 +1,5 @@
-import 'package:cluth_vscode_ver1/widget/bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:cluth_vscode_ver1/widget/bottom_bar.dart';
 
 void main() => runApp(const MyApp());
 
