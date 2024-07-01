@@ -35,14 +35,17 @@ class CombinedApp extends StatelessWidget {
         highlightColor: Colors.white,
       ),
       home: DefaultTabController(
-        length: 2, // 탭의 수
+        length: 5, // 탭의 수
         child: Scaffold(
             appBar: AppBar(
               title: const Text('Clutch'),
               bottom: const TabBar(
                 tabs: [
-                  Tab(text: 'Tab1'),
-                  Tab(text: 'Tab2'),
+                  Tab(text: '슛맵'),
+                  Tab(text: '포메이션 맵'),
+                  Tab(text: '패스 맵'),
+                  Tab(text: '최근'),
+                  Tab(text: '과거')
                 ],
               ),
             ),
