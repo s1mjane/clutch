@@ -1,60 +1,66 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class Bottom extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       color: Colors.black,
-//       child: Container(
-//         height: 50,
-//         child: const TabBar(
-//           labelColor: Colors.white,
-//           unselectedLabelColor: Colors.white60,
-//           indicatorColor: Colors.transparent,
-//           tabs: <Widget>[
-//             Tab(
-//               icon: Icon(
-//                 Icons.home,
-//                 size: 18,
-//               ),
-//               child: Text(
-//                 '홈',
-//                 style: TextStyle(fontSize: 9),
-//               ),
-//             ),
-//             Tab(
-//               icon: Icon(
-//                 Icons.search,
-//                 size: 18,
-//               ),
-//               child: Text(
-//                 '검색',
-//                 style: TextStyle(fontSize: 9),
-//               ),
-//             ),
-//             Tab(
-//               icon: Icon(
-//                 Icons.save_alt,
-//                 size: 18,
-//               ),
-//               child: Text(
-//                 '저장한 컨텐츠 목록',
-//                 style: TextStyle(fontSize: 9),
-//               ),
-//             ),
-//             Tab(
-//               icon: Icon(
-//                 Icons.list,
-//                 size: 18,
-//               ),
-//               child: Text(
-//                 '더보기',
-//                 style: TextStyle(fontSize: 9),
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+void main() {
+  runApp(const SegmentedButtonApp());
+}
+
+class SegmentedButtonApp extends StatelessWidget {
+  const SegmentedButtonApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(useMaterial3: true),
+      home: const Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Spacer(),
+              Text('Multiple choice'),
+              MultipleChoice(),
+              Spacer(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+enum Sizes { extraSmall, small, medium, large, extraLarge }
+
+class MultipleChoice extends StatefulWidget {
+  const MultipleChoice({super.key});
+
+  @override
+  State<MultipleChoice> createState() => _MultipleChoiceState();
+}
+
+class _MultipleChoiceState extends State<MultipleChoice> {
+  Set<Sizes> selection = <Sizes>{Sizes.large, Sizes.extraLarge};
+
+  @override
+  Widget build(BuildContext context) {
+    return SegmentedButton<Sizes>(
+      segments: const <ButtonSegment<Sizes>>[
+        ButtonSegment<Sizes>(value: Sizes.extraSmall, label: Text('XS')),
+        ButtonSegment<Sizes>(value: Sizes.small, label: Text('S')),
+        ButtonSegment<Sizes>(value: Sizes.medium, label: Text('M')),
+        ButtonSegment<Sizes>(
+          value: Sizes.large,
+          label: Text('L'),
+        ),
+        ButtonSegment<Sizes>(value: Sizes.extraLarge, label: Text('XL')),
+      ],
+      selected: selection,
+      onSelectionChanged: (Set<Sizes> newSelection) {
+        setState(() {
+          selection = newSelection;
+        });
+      },
+      multiSelectionEnabled: true,
+    );
+  }
+}
