@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class colorTheme {
+class ColorTheme { // Theme Class 이름은 대문자로 시작. 아래는 특수문자 없이 소문자로 시작.
   static const Color primary = Color(0xFF12191D);
   static const Color secondary= Color(0xFFF63636);
   static const Color tertiary = Color(0xFF36F649);

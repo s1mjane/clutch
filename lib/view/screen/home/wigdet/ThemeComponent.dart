@@ -20,13 +20,13 @@ class _ThemeComponentState extends State<ThemeComponent> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              color: colorTheme.primary,
+              color: ColorTheme.primary,
               height: 400.h,
               width: 200.w,
             ),
 
             Container(
-              color: colorTheme.secondary,
+              color: ColorTheme.secondary,
               height: 400.h,
               width: 200.w,
             )
@@ -36,13 +36,13 @@ class _ThemeComponentState extends State<ThemeComponent> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              color: colorTheme.neutral,
+              color: ColorTheme.neutral,
               height: 400.h,
               width: 200.w,
             ),
 
             Container(
-              color: colorTheme.tertiary,
+              color: ColorTheme.tertiary,
               height: 400.h,
               width: 200.w,
             )
