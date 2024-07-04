@@ -1,5 +1,4 @@
-import 'package:cluth_vscode_ver1/view/screen/home/wigdet/FontComponent.dart';
-import 'package:cluth_vscode_ver1/view/screen/home/wigdet/ThemeComponent.dart';
+import 'package:cluth_vscode_ver1/widget/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,23 +11,26 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            tabs: [
-              Tab(text: 'Theme'),
-              Tab(text: 'Font'),
+    return MaterialApp(
+      title: 'Clutch',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.black,
+        focusColor: Colors.white,
+      ),
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          body: TabBarView(
+            physics: const NeverScrollableScrollPhysics(), // 손가락 모션으로 탭 못 바꾸게.
+            children: <Widget>[
+              Container(),
+              Container(),
+              Container(),
+              Container(),
             ],
           ),
-          title: Text('Font & Color Theme Ex'),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            ThemeComponent(),
-            FontComponent()
-          ],
+          bottomNavigationBar: const Bottom(),
         ),
       ),
     );
