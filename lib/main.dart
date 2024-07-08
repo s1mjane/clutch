@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(430,932),
       builder: (_,child){
-        return const GetMaterialApp(
+        return GetMaterialApp(
+            title: 'Clutch',
+            theme: ThemeData(
+              brightness: Brightness.dark,
+              primaryColor: Colors.black,
+              focusColor: Colors.white,
+            ),
             home: HomePage()
         );
       },
