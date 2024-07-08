@@ -36,6 +36,9 @@ flutter:
     - asset/icon/calendar.png
 
   fonts:
+    - family: MyFlutterApp
+      fonts:
+        - asset: asset/font/MyFlutterApp.ttf
     - family: Pretendard-Bold
       fonts:
         - asset: asset/font/Pretendard-Bold.otf
