@@ -1,12 +1,13 @@
 import 'package:cluth_vscode_ver1/view/screen/home/home.dart';
-import 'package:cluth_vscode_ver1/view/screen/home/loginpage.dart';
+import 'package:cluth_vscode_ver1/view/screen/home/loginsignuppage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized(); // 비동기 방식으로
+  Firebase.initializeApp(); 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           } else if (snapshot.hasData) {
             return HomePage();
           } else {
-            return LoginPage();
+            return LoginSignupScreen();
           }
         },
       ),
