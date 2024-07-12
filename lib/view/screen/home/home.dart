@@ -1,6 +1,5 @@
 import 'package:cluth_vscode_ver1/widget/bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "479948189947",
+    "firebase_url": "https://clutch-czb3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "clutch-czb3",
+    "storage_bucket": "clutch-czb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479948189947:android:441257ecbdc758899c405e",
+        "android_client_info": {
+          "package_name": "com.czb.clutch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFtkumag6Uy0PB_mX8o3Cgcske6rDyBN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

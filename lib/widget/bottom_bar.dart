@@ -18,30 +18,50 @@ class Bottom extends StatelessWidget {
             indicatorColor: Colors.transparent,
             tabs: <Widget>[
               Tab(
-                child: Column(children: [
-                  Icon(MyFlutterApp.home,size: 27.58.w,),
-                  Text('홈', style: TextStyle(fontSize: 12.sp)),
+                child:
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                  Icon(
+                    MyFlutterApp.home,
+                    size: 26.h, // 원래는 29.h
+                  ),
+                  Text('홈', style: TextStyle(fontSize: 14.sp)),
                 ]),
-              ),Tab(
+              ),
+              Tab(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                  SizedBox(height: 7.h),
-                  Icon(MyFlutterApp.link, size: 20.w,),
-                  SizedBox(height: 3.h),
-                  Text('연결', style: TextStyle(fontSize: 12.sp)),
-                ]),
-              ),Tab(
+                      SizedBox(height: 7.h),
+                      Icon(
+                        MyFlutterApp.link,
+                        size: 17.h,
+                      ),
+                      SizedBox(height: 2.h),
+                      Text('연결', style: TextStyle(fontSize: 14.sp)),
+                    ]),
+              ),
+              Tab(
                 child: Column(children: [
-                  Icon(MyFlutterApp.player,size: 33.w,),
-                  SizedBox(height:2.h),
-                  Text('선수', style: TextStyle(fontSize: 12.sp)),
+                  Icon(
+                    MyFlutterApp.player,
+                    size: 33.w,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text('선수', style: TextStyle(fontSize:
+                   14.sp)),
                 ]),
-              ),Tab(
+              ),
+              Tab(
                 child: Column(children: [
-                  Icon(MyFlutterApp.calendar,size: 33.w,),
+                  Icon(
+                    MyFlutterApp.calendar,
+                    size: 33.w,
+                  ),
                   SizedBox(height: 4.h),
-                  Text('캘린더', style: TextStyle(fontSize: 12.sp)),
+                  Text('캘린더', style: TextStyle(fontSize: 14.sp)),
                 ]),
               ),
             ],
